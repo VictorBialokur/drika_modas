@@ -29,6 +29,14 @@ export default function EditarRoupas() {
         }
     }
 
+    const handlePreco = (text: string) => {
+        const textoCerto = text.replace(',','.')
+        const precoValidado = textoCerto.match(/^(\d*\.?\d{0,2})$/)
+        if (precoValidado) {
+          setPreco(String(Number(precoValidado[0])*100))
+        }
+      }
+
 
     async function update(roupa: RoupaDatabase) {
         try {
@@ -81,7 +89,7 @@ export default function EditarRoupas() {
                 > 
                     <View style={styles.clientesContainer}>
 
-                        <Text style={styles.textoTitulo}>DADOS DO CLIENTE</Text>
+                        <Text style={styles.textoTitulo}>DADOS DA ROUPA</Text>
 
                         <ImagePickerInput onImagemSelecionada={setImagem} />
 
@@ -92,7 +100,13 @@ export default function EditarRoupas() {
 
                         <View style={styles.clientes}>
                             <Text style={styles.texto}>Tamanho: </Text>
-                            <Input value={tamanho} onChangeText={setTamanho} maxLength={11} 
+                            <Input value={tamanho} onChangeText={setTamanho} maxLength={11}
+                            />
+                        </View>
+
+                        <View style={styles.clientes}>
+                            <Text style={styles.texto}>Preço: </Text>
+                            <Input value={String(Number(preco)/100)} onChangeText={handlePreco} maxLength={11} 
                             keyboardType="numeric"
                             />
                         </View>
