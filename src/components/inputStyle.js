@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         backgroundColor: 'white',
         borderRadius: 25,
+        color: 'black'
     },
 });
 export default styles;

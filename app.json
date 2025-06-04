@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "projeto_drika_moda",
+    "name": "Projeto Drika Modas",
     "slug": "projeto_drika_moda",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.victorbialokur.projeto_drika_modas"
     },
     "web": {
       "bundler": "metro",
